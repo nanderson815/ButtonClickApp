@@ -17,15 +17,17 @@ class MainActivity : AppCompatActivity() {
 
         val userInput: EditText = findViewById<EditText>(R.id.editText)
         val button: Button = findViewById<Button>(R.id.button)
+
         textView = findViewById<TextView>(R.id.textView)
         textView?.text = ""
         textView?.movementMethod = ScrollingMovementMethod()
+        userInput.setText("")
 
         button.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
                 textView?.append(userInput.text)
                 textView?.append("\n")
-                textView?.text = ""
+                userInput.setText("")
             }
         })
     }
